@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.T.A.L.K.E.R. | DayZ-RP | Event | AoD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DayZ Предметный Спавнер</h1>
+            <div id="auth-status" class="auth-status">
+				<img src="logo.png" alt="Логотип DayZ Spawn Tool" width="40">
+                <button id="steam-auth" class="steam-btn">
+                    <img src="https://steamcommunity-a.akamaihd.net/steamcommunity/public/images/signinthroughsteam/sits_01.png" alt="Steam" width="16">
+            Авторизация через Steam
+        </button>
+                <div id="user-info" class="user-info" style="display: none;">
+                    <img id="steam-avatar" class="avatar" src="" alt="Аватар">
+                    <span id="steam-name"></span>
+                    <button id="logout" class="logout-btn">Выйти</button>
+        </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="controls">
+                <label for="itemSelect">Выберите предмет:</label>
+                <select id="itemSelect" class="select-input">
+                    <option value="">-- Выберите предмет --</option>
+            <option value="Paper">Бумага</option>
+            <option value="Torch">Факел</option>
+            <option value="FirstAidKit">Аптечка</option>
+            <option value="Bandage">Бинт</option>
+            <option value="WaterBottle">Бутылка воды</option>
+            <option value="FoodCanBeef">Консервы (говядина)</option>
+        </select>
+
+                <label for="quantityInput">Количество:</label>
+                <input type="number" id="quantityInput" class="number-input" min="1" max="100" value="1">
+
+                <label for="positionSelect">Позиция спавна:</label>
+                <select id="positionSelect" class="select-input">
+            <option value="player">У игрока</option>
+            <option value="cursor">В точке курсора (если поддерживается)</option>
+            <option value="random">Случайная точка на карте</option>
+        </select>
+
+                <button id="spawnBtn" class="spawn-btn" disabled>Заспавнить</button>
+            </div>
+
+            <div id="status" class="status"></div>
+        </main>
+
+        <footer>
+            <p>DayZ Spawn Tool v1.0 | <span id="currentTime"></span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
